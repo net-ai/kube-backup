@@ -4,7 +4,7 @@ if [ -z "$NAMESPACES" ]; then
     NAMESPACES=$(kubectl get ns -o jsonpath={.items[*].metadata.name})
 fi
 
-RESOURCETYPES="${RESOURCETYPES:-"ingress deployment configmap svc rc ds crd networkpolicy statefulset storageclass cronjob limitranges"}"
+RESOURCETYPES="${RESOURCETYPES:-"ingress deployment configmap svc rc ds networkpolicy statefulset storageclass cronjob limitrange crd serviceaccount pvc hpa role rolebinding destinationpolicy"}"
 GLOBALRESOURCES="${GLOBALRESOURCES:-"namespace storageclasses"}"
 
 # Initialize git repo
